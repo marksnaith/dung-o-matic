@@ -13,20 +13,8 @@ public class DungOMatic{
 
   public DungOMatic(String args, String attacks, String semantics){
 
-    if(args != null){
-      this.args = new HashSet<>(Arrays.asList(args.split(",")));
-    }else{
-      this.args = new HashSet<>();
-    }
-
-    if(attacks != null){
-      this.attacks = new HashSet<>(Arrays.asList(attacks.split(";")));
-    }else{
-      this.attacks = new HashSet<>();
-    }
-
-    System.err.println("New hashsets created");
-
+    this.args = (args != null) ? new HashSet<>(Arrays.asList(args.split(","))) : new HashSet<>();
+    this.attacks = (attacks != null) ? new HashSet<>(Arrays.asList(attacks.split(";"))) : new HashSet<>();
     this.strAttacks = new HashSet<>();
 
     if(attacks != null){
@@ -34,6 +22,7 @@ public class DungOMatic{
         this.strAttacks.add(att.substring(1, att.length()-1).replace(",",">"));
       }
     }
+
     this.semantics = semantics;
   }
 
