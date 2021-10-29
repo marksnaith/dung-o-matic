@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  dung-o-matic:
+    container_name: dungomatic
+    build: .
+    ports:
+    - "8080:80"
